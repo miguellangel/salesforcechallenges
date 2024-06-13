@@ -20,17 +20,20 @@ public class SOQLChallenges {
         AggregateResult nAmpersand = [SELECT count(ID) from Account WHERE Name LIKE '%&%'];
         return (Integer)nAmpersand.get('expr0');
     }
+    
     // Challenge IV: Write a method called BigFive. 
     // This method should return the top 5 Accounts in terms of Annual Revenue. 
     // You may only use 1 line of code for the method body
     public static List<Account> BigFive() {
         return [SELECT Id, Name, AnnualRevenue FROM Account WHERE AnnualRevenue != Null ORDER BY AnnualRevenue DESC LIMIT 5];
     }
+    
     // Challenge V: Write a method called LastBigOpportunity. 
     // This method should return the Opportunity with the most recent Close Date that had an Amount over $100,000.
     public static Opportunity LastBigOpportunity() {
         return [SELECT Name, Amount, CloseDate FROM Opportunity WHERE Amount > 100000 ORDER BY CloseDate DESC LIMIT 1][0];
     }
+    
     // Challenge VI: Write a method called MajorPlayers. 
     // This method should return all Contacts that are associated to an Account with a Rating of Hot.
     public static List<Contact> MajorPlayers () {
@@ -45,8 +48,7 @@ public class SOQLChallenges {
         
         return cons;
     }
-
-
+    
     // Challenge VII: Write a method called MostPopularAccount. 
     // This method should return the Account Name that has the most associated Contacts.
     public static String MostPopularAccount(){
