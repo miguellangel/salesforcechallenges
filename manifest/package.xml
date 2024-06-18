@@ -5,6 +5,12 @@
         <members>ContactTriggerHelper</members>
         <members>OpportunityTriggerHelper</members>
         <members>SOQLChallenges</members>
+        <members>Vehicle</members>
+        <members>Car</members>
+
+        <members>ScheduleBatchDeleteStaleAccounts</members>
+        <members>BatchDeleteStaleAccounts</members>
+
         <name>ApexClass</name>
     </types>
     <types>
