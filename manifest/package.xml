@@ -11,6 +11,8 @@
         <members>ScheduleBatchDeleteStaleAccounts</members>
         <members>BatchDeleteStaleAccounts</members>
 
+        <members>AccountCustomController</members>
+
         <name>ApexClass</name>
     </types>
     <types>
@@ -18,6 +20,11 @@
         <members>ContactTrigger</members>
         <members>OpportunityTrigger</members>
         <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>vfAccountChallenge1</members>
+        <name>Apexpage</name>
     </types>
 
     <version>59.0</version>
