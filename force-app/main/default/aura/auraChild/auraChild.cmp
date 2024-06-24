@@ -1,0 +1,15 @@
+<!-- The child component should contain a text input box and a button. 
+When the user clicks the button, the input text should be passed to the parent component.  -->
+
+<aura:component>
+    <aura:registerEvent name="compEvent" type="c:myComponentEvent"/>
+    <aura:attribute name="valueFromParent" type="string"/>
+
+    <div class="child">
+        <h1>This is my child component: labeled in red!</h1>
+        <p>Value passed from parent: {!v.valueFromParent}</p>
+        <lightning:input type="text" label="text to pass to parent"></lightning:input>
+        <lightning:button variant="brand" label="Fire Component Event!" title="Fire Component Event!" onclick="{! c.handleClick }"/>
+        <lightning:button variant="brand" label="Fire Toast Event!" onclick="{! c.handleClick }"/>
+    </div>
+</aura:component>	
