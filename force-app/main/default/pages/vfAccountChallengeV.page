@@ -1,0 +1,59 @@
+<apex:page controller="AccountCustomController" standardStylesheets="true" language="{!selectedLang}">
+    <apex:slds />
+    <style>
+        #wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #sidebar {
+            width: 25%;
+        }
+        div#content {
+            border: 1px dotted;
+            padding: 5em;
+            border-radius: 1em;
+        }
+    
+    </style>
+    
+    <div id="wrapper">
+        <div id="sidebar">
+            Challenges
+            <c:vfChallengeItems />
+        </div>
+        <div id="content">
+            <p>Style your wondrous Visualforce creation with CSS.</p>
+            <apex:form >
+               
+                <apex:selectList value="{!selectedLang}" size="1">
+                    <apex:selectoptions value="{!listOfLang}"/>
+                    <apex:actionsupport event="onchange"/>
+                </apex:selectlist>
+            
+            
+                <apex:pageBlock >
+        
+                    <apex:pageBlockSection title="{!IF(Account.Name == null, 'Create an Account Record', Account.Name)}" columns="2">
+                        <apex:inputField value="{!Account.Name}" />
+                        <apex:inputField value="{!Account.Id}" />
+                        <apex:outputText >{!Account.Name}</apex:outputText>
+        
+                    </apex:pageBlockSection>
+        
+                
+                    <apex:pageBlockSection >
+                        <apex:outputText >Hi, my name is Miguel Arriaga. How are you doing today?</apex:outputText>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+
+        </div>
+    </div>
+    
+    
+
+</apex:page>

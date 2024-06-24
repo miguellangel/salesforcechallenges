@@ -1,0 +1,6 @@
+<apex:page standardController="Account">
+    <c:vfChallengeItems />
+    <p>Create a Visualforce page that displays a single Account, specified as a parameter in the URL.</p>
+    <p>Append the following into the URL: ?id=001bm000004VcIdAAK</p>
+    <apex:detail />
+</apex:page>

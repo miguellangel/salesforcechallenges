@@ -1,0 +1,30 @@
+<apex:page controller="AccountCustomController" standardStylesheets="true" language="{!selectedLang}">
+    <c:vfChallengeItems />
+    <p>Add to your Visualforce page an About Me section. This should simply be a paragraph about yourself. However, this paragraph should be translated to Spanish if the current viewing user has their language set to Spanish. Download this creation as a PDF.
+
+</p>
+    <apex:form >
+       
+        <apex:selectList value="{!selectedLang}" size="1">
+            <apex:selectoptions value="{!listOfLang}"/>
+            <apex:actionsupport event="onchange"/>
+        </apex:selectlist>
+    
+    
+        <apex:pageBlock >
+
+            <apex:pageBlockSection title="{!IF(Account.Name == null, 'Create an Account Record', Account.Name)}" columns="2">
+                <apex:inputField value="{!Account.Name}" />
+                <apex:inputField value="{!Account.Id}" />
+                <apex:outputText >{!Account.Name}</apex:outputText>
+
+            </apex:pageBlockSection>
+
+        
+            <apex:pageBlockSection >
+                <apex:outputText >Hi, my name is Miguel Arriaga. How are you doing today?</apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

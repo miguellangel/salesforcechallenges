@@ -1,0 +1,41 @@
+<apex:page standardController="Account" recordSetvar="accounts">
+    <c:vfChallengeItems />
+    <p>Modify your Visualforce page to display a paginated table of Accounts.</p>
+    
+
+    <apex:pageBlock title="Accounts">
+        <apex:form >
+            <apex:pageBlockSection >
+                <apex:dataTable value="{!accounts}" var="account">
+                    
+                    <apex:column >
+                        <apex:facet name="header">Account Number</apex:facet>
+                        <apex:outputText value="{!account.AccountNumber}"/>
+                    </apex:column>
+                    
+                    <apex:column >
+                        <apex:facet name="header">Name</apex:facet>
+                        <apex:outputText value="{!account.name}"/>
+                    </apex:column>
+            
+                    <apex:column >
+                        <apex:facet name="header">Phone</apex:facet>
+                        <apex:outputText value="{!account.phone}"/>
+                    </apex:column>
+                    
+                    <apex:column >
+                        <apex:facet name="header">Website</apex:facet>
+                        <apex:outputText value="{!account.website}"/>
+                    </apex:column>
+                    
+                </apex:dataTable>
+            </apex:pageBlockSection>
+            <apex:panelGrid columns="2">
+                <apex:commandLink action="{!previous}">Previous</apex:commandlink>
+                <apex:commandLink action="{!next}">Next</apex:commandlink>
+            </apex:panelGrid>
+        </apex:form> 
+    </apex:pageBlock>
+    
+    
+</apex:page>
