@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50vh;
+    gap: 0.5em;
+}
+
+.search {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.displayResults {}

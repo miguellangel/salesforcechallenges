@@ -1,0 +1,25 @@
+<!-- Create a LWC that can accept user input and dynamically display account records 
+ where the account name is similar to the value of the text input. Use the wire service only. 
+-->
+<template>
+    <div class="wrapper">
+        <div class="search">
+
+            <input class='query' type="text">
+            <button onclick={handleClick}>Search Account</button>
+        </div>
+        <div class="displayresults">
+            <template lwc:if={accounts.data}>
+                <lightning-datatable
+                            hide-checkbox-column
+                            key-field="id"
+                            data={accounts.data}
+                            columns={columns}>
+                    </lightning-datatable>
+            </template>
+
+        </div>
+    </div>
+
+    
+</template>
