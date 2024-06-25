@@ -8,8 +8,7 @@ When the user clicks the button, the input text should be passed to the parent c
     <div class="child">
         <h1>This is my child component: labeled in red!</h1>
         <p>Value passed from parent: {!v.valueFromParent}</p>
-        <lightning:input type="text" label="text to pass to parent"></lightning:input>
-        <lightning:button variant="brand" label="Fire Component Event!" title="Fire Component Event!" onclick="{! c.handleClick }"/>
-        <lightning:button variant="brand" label="Fire Toast Event!" onclick="{! c.handleClick }"/>
+        <lightning:input id="newTaskInput" type="text" label="New Task"></lightning:input>
+        <lightning:button variant="brand" label="Add Task" title="Add Task!" onclick="{! c.handleClick }"/>
     </div>
 </aura:component>	

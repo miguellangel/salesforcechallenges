@@ -8,9 +8,7 @@
         <members>Vehicle</members>
         <members>Car</members>
 
-        <members>ScheduleBatchDeleteStaleAccounts</members>
-        <members>BatchDeleteStaleAccounts</members>
-
+        
         <members>AccountCustomController</members>
 
         <name>ApexClass</name>
