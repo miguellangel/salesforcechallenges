@@ -3,16 +3,13 @@
         <div class="search">
 
             <input class='query' type="text">
-            <button onclick={handleClick}>Search Account</button>
+            <button onclick={handleImperativeSearch}>Search Account</button>
         </div>
         <div class="displayresults">
-            <template lwc:if={accounts.data}>
-                <lightning-datatable
-                            hide-checkbox-column
-                            key-field="id"
-                            data={accounts.data}
-                            columns={columns}>
-                    </lightning-datatable>
+            <template lwc:if={accounts}>
+                <template for:each={accounts} for:item="acc">
+                    <p class="p" key={acc.id}>{acc.Name}'s annual revenue: {acc.AnnualRevenue}</p>
+                </template>
             </template>
 
         </div>
