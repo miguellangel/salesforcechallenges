@@ -14,19 +14,23 @@
     },
     {
       "path": "challenge-lwc",
-      "default": false
+      "default": true
     },
     {
       "path": "challenge-oop",
       "default": false
     },
     {
+        "path": "challenge-schedulebatchable",
+        "default": false
+      },
+    {
       "path": "challenge-soqlsosl",
       "default": false
     },
     {
       "path": "challenge-triggers",
-      "default": true
+      "default": false
     }
   ],
   "name": ".",
