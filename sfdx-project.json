@@ -1,12 +1,40 @@
 {
   "packageDirectories": [
     {
-      "path": "force-app",
+      "path": "challenge-auravisualforce",
+      "default": false
+    },
+    {
+      "path": "challenge-classdelivery",
+      "default": false,
+      "package": "challenge-classdelivery",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "versionDescription": ""
+    },
+    {
+      "path": "challenge-lwc",
+      "default": false
+    },
+    {
+      "path": "challenge-oop",
+      "default": false
+    },
+    {
+      "path": "challenge-soqlsosl",
+      "default": false
+    },
+    {
+      "path": "challenge-triggers",
       "default": true
     }
   ],
   "name": ".",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "59.0"
+  "sourceApiVersion": "59.0",
+  "packageAliases": {
+    "challenge-classdelivery": "0Hobm00000005SjCAI",
+    "challenge-classdelivery@0.1.0-1": "04tbm0000001jZNAAY"
+  }
 }

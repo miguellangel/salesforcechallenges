@@ -21,12 +21,21 @@
     </types>
 
     <types>
-        <members>*</members>
+        <members>vfAccountChallenge1</members>
+        <members>vfAccountChallengeI</members>
+        <members>vfAccountChallengeII</members>
+        <members>vfAccountChallengeIII</members>
+        <members>vfAccountChallengeIV</members>
+        <members>vfAccountChallengeV</members>
+        
         <name>Apexpage</name>
     </types>
 
     <types>
-        <members>*</members>
+        <members>auraChild</members>
+        <members>auraParent</members>
+        <members>componentCommunication</members>
+        <members>myComponentEvent</members>
         <name>AuraDefinitionBundle</name>
     </types>
     <types>

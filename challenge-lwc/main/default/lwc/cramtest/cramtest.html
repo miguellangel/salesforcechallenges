@@ -1,0 +1,12 @@
+<template>
+    <input type="text" class="inputField">
+    <button onclick={handleSearch}>Search</button>
+    <template lwc:if={accounts}>
+        <lightning-datatable
+        key-field="id"
+        hide-checkbox-column
+        columns={columns}
+        data={accounts}>
+        </lightning-datatable>
+    </template>
+</template>
