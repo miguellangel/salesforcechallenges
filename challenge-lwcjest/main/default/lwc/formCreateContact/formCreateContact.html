@@ -7,5 +7,30 @@
         <input name="LastName" type="text">
         <button type="submit">Submit</button>
 
+        <section></section>
+        <lightning-input 
+          type="checkbox"
+          label="Associate Account?"
+          name="associate-account-bool"
+          onchange={handleAssociateAccount}
+          value={associateAccount}
+       
+        ></lightning-input>
+        <template lwc:if={accounts}>
+            <label>Account
+                <lightning-combobox
+                  message-when-value-missing="Optional message to be displayed when no checkbox is selected and the required attribute is set."
+                  name="Account"
+                  placeholder="Select Account"
+                  options={accounts}
+                  value={selectedAccount}
+                  onchange={handleComboBoxChange} 
+                  variant="standard"
+                ></lightning-combobox>
+    
+            </label>
+
+        </template>
+
     </form>
 </template>

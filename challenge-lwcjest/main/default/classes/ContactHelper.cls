@@ -17,4 +17,13 @@ public with sharing class ContactHelper {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled(cacheable=true)
+    public static List<Account> getAllAccounts(){
+        try {
+            return [SELECT Id, Name FROM Account];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
 }
