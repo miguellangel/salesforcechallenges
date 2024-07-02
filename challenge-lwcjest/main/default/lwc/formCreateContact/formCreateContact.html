@@ -5,14 +5,13 @@
         <input name="FirstName" type="text">
         <label for="LastName">Last Name</label>
         <input name="LastName" type="text">
-        <button type="submit">Submit</button>
 
         <section></section>
         <lightning-input 
           type="checkbox"
           label="Associate Account?"
           name="associate-account-bool"
-          onchange={handleAssociateAccount}
+          onchange={getAccountsForComboBox}
           value={associateAccount}
        
         ></lightning-input>
@@ -31,6 +30,7 @@
             </label>
 
         </template>
+        <button type="submit">Submit</button>
 
     </form>
 </template>

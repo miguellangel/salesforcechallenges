@@ -6,6 +6,7 @@ public with sharing class ContactHelper {
             Contact newContact = new Contact();
             newContact.FirstName = wrapper.firstName;
             newContact.LastName = wrapper.lastName;
+            newContact.AccountId = wrapper.accountId;
 
             
             System.debug('hello there ' + newContact.FirstName);
