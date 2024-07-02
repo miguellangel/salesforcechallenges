@@ -5,15 +5,15 @@
     <div class="wrapper">
         <div class="search">
 
-            <input class='query' type="text">
+            <input class='query' type="text" onchange={handleQueryReset}>
             <button onclick={handleClick}>Search Account</button>
         </div>
         <div class="displayresults">
-            <template lwc:if={accounts.data}>
+            <template lwc:if={accounts}>
                 <lightning-datatable
                             hide-checkbox-column
                             key-field="id"
-                            data={accounts.data}
+                            data={accounts}
                             columns={columns}>
                     </lightning-datatable>
             </template>
