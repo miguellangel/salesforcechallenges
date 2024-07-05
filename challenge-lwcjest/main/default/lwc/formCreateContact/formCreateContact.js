@@ -1,4 +1,5 @@
 import { LightningElement, track, wire } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import createContact from '@salesforce/apex/ContactHelper.createContact';
 import getAllAccounts from '@salesforce/apex/ContactHelper.getAllAccounts';
 
@@ -34,6 +35,25 @@ export default class FormCreateContact extends LightningElement {
         this.selectedAccount = event.detail.value;
     }
     
+    showSuccessToast() {
+        const event = new ShowToastEvent({
+            title: 'Success',
+            message:
+                'Contact created successfully',
+            variant: 'success',
+            mode: 'dismissable'
+        });
+        this.dispatchEvent(event);
+    }
+    showErrorToast() {
+        const event = new ShowToastEvent({
+            title: 'Something went wrong',
+            message:
+                'Could not create Contact. Make sure at least last name field is filled.',
+        });
+        this.dispatchEvent(event);
+    }
+
     async handleCreateContact(event) {
         event.preventDefault();
         let formFields = this.template.querySelector('.form').elements;
@@ -43,14 +63,23 @@ export default class FormCreateContact extends LightningElement {
             lastName: formFields['LastName'].value,
             accountId: this.selectedAccount
         }
-        console.log('object: ', formFields);
         try {
             this.message = await createContact({wrapper: contactArgs});
             this.error = undefined;
+            console.log("successful execution");
+            this.showSuccessToast();
+            return 'success';
         } catch (error) {
+            console.log('error encountered');
             this.message = undefined;
             this.error = error;
+            const event = new ShowToastEvent({
+                title: 'Something went wrong',
+                message:
+                    'Could not create Contact. Make sure at least last name field is filled.',
+            });
+            this.dispatchEvent(event);
+            return 'error';
         }
-    
     }
 }

@@ -5,6 +5,10 @@
             "default": false
         },
         {
+            "path": "challenge-caseplatformevent",
+            "default": true
+        },
+        {
             "path": "challenge-classdelivery",
             "default": false,
             "package": "challenge-classdelivery",
@@ -18,7 +22,7 @@
         },
         {
             "path": "challenge-lwc",
-            "default": true
+            "default": false
         },
         {
             "path": "challenge-lwcjest",
